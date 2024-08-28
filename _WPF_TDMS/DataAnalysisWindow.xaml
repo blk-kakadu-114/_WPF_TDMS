@@ -1,0 +1,25 @@
+﻿<Window x:Class="_WPF_TDMS.DataAnalysisWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Анализ данных" Height="600" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Боковое меню -->
+        <TreeView Grid.Column="0" SelectedItemChanged="TreeView_SelectedItemChanged">
+            <TreeViewItem Header="Создание каталога" Name="CatalogCreationItem"/>
+            <TreeViewItem Header="Обработка пропусков" Name="DataEditing"/>
+            <TreeViewItem Header="Преобразование данных" Name="DataTransformationItem"/>
+            <TreeViewItem Header="Разведывательный анализ" Name="EDAItem"/>
+            <TreeViewItem Header="Разделение данных" Name="DataSplitItem"/>
+        </TreeView>
+
+        <!-- Основная область для отображения содержимого -->
+        <Grid Grid.Column="1" Name="ContentGrid">
+            <!-- Сюда будем динамически добавлять содержимое -->
+        </Grid>
+    </Grid>
+</Window>
